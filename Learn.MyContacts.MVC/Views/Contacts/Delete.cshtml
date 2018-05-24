@@ -1,0 +1,39 @@
+﻿@model Learn.MyContacts.Models.Contact
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Deletar Contato da Agenda</h2>
+
+<h3>Você tem certeza que deseja deletar este contato?</h3>
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Company)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Company)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ContactID" />
+        <input type="submit" value="Deletar" class="btn btn-default" /> |
+        <a asp-action="Index">Retornar para a Agenda</a>
+    </form>
+</div>

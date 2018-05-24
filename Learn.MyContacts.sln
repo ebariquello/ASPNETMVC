@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.MyContacts", "Learn.MyContacts\Learn.MyContacts.csproj", "{5E9CBE87-9F98-446D-BB8E-A8E59A85FDCE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.MyContacts.Repository", "Learn.MyContacts.Repository\Learn.MyContacts.Repository.csproj", "{B93BFE63-3E11-45EF-B07F-53BD7149D6E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.MyContacts.Models", "Learn.MyContacts.Models\Learn.MyContacts.Models.csproj", "{10068400-84D2-4BD7-AD55-3B7AEEAC00A2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learn.MyContacts.MVC", "Learn.MyContacts.MVC\Learn.MyContacts.MVC.csproj", "{67758B1D-5D2A-4B3A-87A5-0EF97652768C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.MyContacts.Services", "Learn.MyContacts.Services\Learn.MyContacts.Services.csproj", "{E9120808-9319-4564-BEF7-15BA4C9F24CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +17,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5E9CBE87-9F98-446D-BB8E-A8E59A85FDCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5E9CBE87-9F98-446D-BB8E-A8E59A85FDCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5E9CBE87-9F98-446D-BB8E-A8E59A85FDCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5E9CBE87-9F98-446D-BB8E-A8E59A85FDCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B93BFE63-3E11-45EF-B07F-53BD7149D6E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B93BFE63-3E11-45EF-B07F-53BD7149D6E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B93BFE63-3E11-45EF-B07F-53BD7149D6E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B93BFE63-3E11-45EF-B07F-53BD7149D6E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10068400-84D2-4BD7-AD55-3B7AEEAC00A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10068400-84D2-4BD7-AD55-3B7AEEAC00A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10068400-84D2-4BD7-AD55-3B7AEEAC00A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10068400-84D2-4BD7-AD55-3B7AEEAC00A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67758B1D-5D2A-4B3A-87A5-0EF97652768C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67758B1D-5D2A-4B3A-87A5-0EF97652768C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67758B1D-5D2A-4B3A-87A5-0EF97652768C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67758B1D-5D2A-4B3A-87A5-0EF97652768C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9120808-9319-4564-BEF7-15BA4C9F24CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9120808-9319-4564-BEF7-15BA4C9F24CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9120808-9319-4564-BEF7-15BA4C9F24CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9120808-9319-4564-BEF7-15BA4C9F24CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

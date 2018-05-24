@@ -1,0 +1,80 @@
+﻿@model Learn.MyContacts.Models.Contact
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalhes do Contato</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Company)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Company)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactEmails)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Email</th>
+                    <th>Tipo</th>
+                </tr>
+                @foreach (var item in Model.ContactEmails)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EmailType.ToString())
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactPhones)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Email</th>
+                    <th>Tipo</th>
+                </tr>
+                @foreach (var item in Model.ContactPhones)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Phone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PhoneType.ToString())
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ContactID">Editar</a> |
+    <a asp-action="Index">Retornar para a Agenda</a>
+</div>
