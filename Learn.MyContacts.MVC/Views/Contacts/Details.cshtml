@@ -1,4 +1,10 @@
-ï»¿@model Learn.MyContacts.Models.Contact
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<script src="~/js/ContactPhone.js"></script>
+<script src="~/js/site.js"></script>
+
+@model Learn.MyContacts.Models.Contact
 
 @{
     ViewData["Title"] = "Details";
@@ -7,7 +13,7 @@
 <h2>Detalhes do Contato</h2>
 
 <div>
-   
+
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -28,11 +34,18 @@
         <dd>
             @Html.DisplayFor(model => model.Company)
         </dd>
+        <dd>
+            &nbsp;
+        </dd>
+        <dd>
+            &nbsp;
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.ContactEmails)
         </dt>
         <dd>
-            <table class="table">
+
+            <table class="table" style="width:50%">
                 <tr>
                     <th>Email</th>
                     <th>Tipo</th>
@@ -40,37 +53,86 @@
                 @foreach (var item in Model.ContactEmails)
                 {
                     <tr>
-                        <td>
+                        <td width="200px">
                             @Html.DisplayFor(modelItem => item.Email)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.EmailType.ToString())
+                            @Html.DisplayFor(modelItem => item.EmailType)
                         </td>
                     </tr>
                 }
             </table>
+
+        </dd>
+        <dd>
+            &nbsp;
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.ContactPhones)
         </dt>
         <dd>
-            <table class="table">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myContactPhoneModal" onclick="ContactPhone.ClearContactPhoneTextBox(@Html.DisplayFor(model => model.ContactID));">Incluir Telefone</button><br /><br />
+
+            <table class="table" id="tablePhone" style="width:50%">
                 <tr>
-                    <th>Email</th>
+                    <th>Telefone</th>
                     <th>Tipo</th>
                 </tr>
                 @foreach (var item in Model.ContactPhones)
                 {
                     <tr>
-                        <td>
+                        <td width="200px">
                             @Html.DisplayFor(modelItem => item.Phone)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.PhoneType.ToString())
+                            @Html.DisplayFor(modelItem => item.PhoneType)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Editar", string.Empty, string.Empty , null, new { href='#',  onclick = string.Format("ContactPhone.GetContactPhoneByID({0},{1}); return false;", Model.ContactID, item.ContactPhoneID) }) |
+                            @Html.ActionLink("Deletar", string.Empty, string.Empty,null, new { href = '#', onclick = string.Format("ContactPhone.Delete({0},{1}); return false;", Model.ContactID, item.ContactPhoneID) })
                         </td>
                     </tr>
                 }
             </table>
+
+            <div class="modal fade" id="myContactPhoneModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            @*<button type="button" class="close" data-dissmiss="modal"><span aria-hidden="true">×</span></button>*@
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                            <h4 class="modal-title" id="myModalLabel">Incluir Telefone</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <input type="hidden" class="form-control" id="ContactPhoneID" />
+                                <input type="hidden" class="form-control" id="ContactPhoneContactID" />
+                                <div class="form-group">
+                                    <label for="Phone">Telefone</label>
+                                    <input type="text" class="form-control digit" id="Phone" placeholder="Telefone" />
+                                    <span id="errorMsgNumber"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="PhoneType">Tipo</label>
+                                    <select class="form-control" id="PhoneType" placeholder="Tipo do Telefone">
+                                        <option value="">Selecione...</option>
+                                        <option value="0">Casa</option>
+                                        <option value="1">Trabalho</option>
+                                        <option value="2">Outros</option>
+                                    </select>
+                                    <span id="errorMsgPhoneType"></span>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" id="btnAddContactPhone" onclick="return ContactPhone.Add();">Incluir</button>
+                            <button type="button" class="btn btn-primary" id="btnUpdateContatPhone" style="display:none;" onclick="ContactPhone.Update();">Editar</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </dd>
     </dl>
 </div>

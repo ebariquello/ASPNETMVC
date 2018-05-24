@@ -70,7 +70,7 @@ namespace Learn.MyContacts.Repository
 
             foreach (ContactPhone cp in contactPhones)
             {
-                context.ConttactsPhones.Add(cp);
+                context.ContactsPhones.Add(cp);
             }
             context.SaveChanges();
         }

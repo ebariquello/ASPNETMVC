@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Learn.MyContacts.Models;
 using Learn.MyContacts.Repository;
 using Learn.MyContacts.Services;
 using Microsoft.AspNetCore.Builder;
@@ -31,8 +32,11 @@ namespace Learn.MyContacts.MVC
 
             services.AddScoped<IContactRepository, ContactRepository>();
             services.AddScoped<IContactService, ContactService>();
-            
-
+            services.AddScoped<IContactCollGenericRepository<ContactPhone> , ContactPhoneRepository>();
+            services.AddScoped<IContactCollGenericRepository<ContactEmail>, ContactEmailRepository>();
+            services.AddScoped<IContactCollGenericService<ContactPhone>, ContactPhoneService>();
+            services.AddScoped<IContactCollGenericService<ContactEmail>, ContactEmailService>();
+           
             services.AddMvc();
         }
 

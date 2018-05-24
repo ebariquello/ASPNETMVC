@@ -99,8 +99,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContactPhoneRepository.cs" />
+    <Compile Include="ContactEmailRepository.cs" />
     <Compile Include="ContactRepository.cs" />
     <Compile Include="DbInitializer.cs" />
+    <Compile Include="IContactCollGenericRepository.cs" />
     <Compile Include="IContactRepository.cs" />
     <Compile Include="MyContactsContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

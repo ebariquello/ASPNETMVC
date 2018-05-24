@@ -22,7 +22,7 @@ namespace Learn.MyContacts.Repository
 
        public DbSet<MyContacts.Models.ContactEmail> ContactsEmails { get; set; }
 
-       public DbSet<MyContacts.Models.ContactPhone> ConttactsPhones { get; set; }
+       public DbSet<MyContacts.Models.ContactPhone> ContactsPhones { get; set; }
 
        protected override void OnModelCreating(ModelBuilder modelBuilder)
 
