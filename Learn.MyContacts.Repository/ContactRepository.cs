@@ -30,7 +30,7 @@ namespace Learn.MyContacts.Repository
 
             var contacts = await _context.Contacts
              .Include(c => c.ContactEmails)
-              .Include(c => c.ContactPhones)
+             .Include(c => c.ContactPhones)
              .AsNoTracking()
              .SingleOrDefaultAsync(m => m.ContactID == contactID);
 

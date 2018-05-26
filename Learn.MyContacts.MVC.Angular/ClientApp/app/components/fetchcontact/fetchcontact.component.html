@@ -1,0 +1,30 @@
+﻿<h1>Agenda de Contatos</h1>
+
+<p *ngIf="!contactList"><em>Carregando...</em></p>
+
+<p>
+    <a [routerLink]="['/create-contact']">Novo Contato</a>
+</p>
+
+<table class='table' *ngIf="contactList">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>Empresa</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let contact of contactList">
+         
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.address }}</td>
+            <td>{{ contact.company }}</td>
+            <td>
+            <td>
+                <a [routerLink]="['/edit-contact/', contact.contactID]">Editar</a> |
+                <a [routerLink]="" (click)="delete(contact.contactID)">Deletar</a>
+            </td>
+        </tr>
+    </tbody>
+</table>  
