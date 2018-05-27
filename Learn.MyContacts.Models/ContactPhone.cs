@@ -10,5 +10,7 @@ namespace Learn.MyContacts.Models
         public string Phone { get; set; }
         public InfoType PhoneType { get; set; }
         public Contact Contact { get; set; }
+
+        public bool IsPrincipal { get; set; }
     }
 }

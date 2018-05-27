@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,8 +24,11 @@
 
   <ItemGroup>
     <None Remove="ClientApp\app\components\addcontact\AddContact.component.ts" />
+    <None Remove="ClientApp\app\components\fetchcontact\contactphones.component.ts" />
     <None Remove="ClientApp\app\components\fetchcontact\FetchContact.component.ts" />
     <None Remove="ClientApp\app\components\models\contactmodel.ts" />
+    <None Remove="ClientApp\app\components\models\contactphonemodalmodel.ts" />
+    <None Remove="ClientApp\app\components\models\contactphonemodel.ts" />
     <None Remove="ClientApp\app\Services\contactService.ts" />
   </ItemGroup>
 
@@ -34,9 +39,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\fetchcontact\contactphones.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\fetchcontact\fetchcontact.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\addcontact\Addcontact.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\models\contactmodel.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\models\contactphonemodalmodel.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\models\contactphonemodel.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\contactService.ts" />
   </ItemGroup>
 

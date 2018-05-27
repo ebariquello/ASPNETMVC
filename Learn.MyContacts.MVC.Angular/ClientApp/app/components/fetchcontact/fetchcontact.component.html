@@ -6,20 +6,39 @@
     <a [routerLink]="['/create-contact']">Novo Contato</a>
 </p>
 
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltipPhone"]').tooltip();
+    });
+</script>
+
 <table class='table' *ngIf="contactList">
     <thead>
         <tr>
             <th>Nome</th>
             <th>Endereço</th>
             <th>Empresa</th>
+            <th>Telefone</th>
+            <th>Email</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let contact of contactList">
-         
+
             <td>{{ contact.name }}</td>
             <td>{{ contact.address }}</td>
             <td>{{ contact.company }}</td>
+            <td>
+                <div *ngIf="contact.phone">
+                    <div class="col-md-6 text-center bottom-left" style="margin-top:8px"> {{ contact.phone }} </div>
+                    <div class="col-md-6" >
+                        <button class="btn btn-default" data-toggle="tooltipPhone" data-placement="top" (click)=showContactPhones(contact.contactPhones) title="Clique para listar Telefones">...</button>
+                    </div>
+
+                </div>
+
+            </td>
+            <td>{{ contact.email }}</td>
             <td>
             <td>
                 <a [routerLink]="['/edit-contact/', contact.contactID]">Editar</a> |
@@ -27,4 +46,5 @@
             </td>
         </tr>
     </tbody>
-</table>  
+</table> 
+

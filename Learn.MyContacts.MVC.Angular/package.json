@@ -23,7 +23,7 @@
     "aspnet-prerendering": "^3.0.1",
     "aspnet-webpack": "^2.0.1",
     "awesome-typescript-loader": "3.2.1",
-    "bootstrap": "3.3.7",
+    "bootstrap": "^3.3.7",
     "css": "2.2.1",
     "css-loader": "0.28.4",
     "es6-shim": "0.35.3",
@@ -36,7 +36,6 @@
     "jasmine-core": "2.6.4",
     "jquery": "3.2.1",
     "json-loader": "0.5.4",
- 
     "preboot": "4.5.2",
     "raw-loader": "0.5.1",
     "reflect-metadata": "0.1.10",
@@ -49,5 +48,8 @@
     "webpack-hot-middleware": "2.18.2",
     "webpack-merge": "4.1.0",
     "zone.js": "~0.8.26"
+  },
+  "dependencies": {
+    "ng2-bootstrap-modal": "^1.0.1"
   }
 }

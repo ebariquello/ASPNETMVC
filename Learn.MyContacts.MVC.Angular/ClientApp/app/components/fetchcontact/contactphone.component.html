@@ -1,0 +1,38 @@
+﻿<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" (click)="close()">&times;</button>
+            <h4 class="modal-title">{{title || 'Confirm'}}</h4>
+        </div>
+        <!--<div class="modal-body">
+        <p>{{message || 'Are you sure?'}}</p>
+    </div>-->
+
+        <table class='table' *ngIf="cp">
+            <thead>
+                <tr>
+                    <th>Telefone</th>
+                    <th>Tipo</th>
+                    <th>Principal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let phoneInfo of cp">
+
+                    <td>{{ phoneInfo.phone }}</td>
+                    <td>{{ phoneInfo.phoneType }}</td>
+                    <td>{{ phoneInfo.isPrincipal }}</td>
+                    <!--<td>
+                        <a [routerLink]="['/edit-contact/', contact.contactID]">Editar</a> |
+                        <a [routerLink]="" (click)="delete(contact.contactID)">Deletar</a>
+                    </td>-->
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="modal-footer">
+            <!--<button type="button" class="btn btn-primary" (click)="confirm()">OK</button>-->
+            <button type="button" class="btn btn-default" (click)="close()">Fechar</button>
+        </div>
+    </div>
+</div>

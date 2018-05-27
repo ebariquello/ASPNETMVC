@@ -11,6 +11,8 @@ namespace Learn.MyContacts.Models
         public string Email { get; set; }
         public InfoType EmailType { get; set; }
         public Contact Contact { get; set; }
-      
+
+        public bool IsPrincipal { get; set; }
+
     }
 }

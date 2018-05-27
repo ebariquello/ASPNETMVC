@@ -20,7 +20,11 @@ namespace Learn.MyContacts.Repository
 
         public async Task<List<Contact>> GetAll()
         {
-            return await _context.Contacts.ToListAsync();
+            return await _context.Contacts
+             .Include(c => c.ContactEmails)
+             .Include(c => c.ContactPhones)
+             .AsNoTracking()
+             .ToListAsync();
         }
 
         public async Task<Contact> GetByID(int contactID)
